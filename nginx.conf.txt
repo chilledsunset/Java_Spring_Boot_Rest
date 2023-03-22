@@ -1,0 +1,11 @@
+http {
+    server {
+        location /signin {
+            try_files $uri /signin/signin.html;
+        }
+
+        location / {
+            proxy_pass http://localhost:8080;
+        }
+    }
+}
